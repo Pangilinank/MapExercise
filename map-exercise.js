@@ -1,6 +1,6 @@
 // EXERCISE
 // Implement the map function.
-// It takes in an array and a callback function. It should return a new array where each item has had the callback applied to it.
+// It takes in an array and a callback function. It should return a new array where each item has had the callback applied to it (preserving the order).
 // Do not use the built-in .map() method. You may use a for loop.
 const map = (arr, callback) => {
   // Write your code here!
