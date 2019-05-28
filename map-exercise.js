@@ -1,6 +1,7 @@
 // EXERCISE
-// Implement the map function. Do not use the built-in .map() method. You may use a for loop.
-// The map function should return a new array where each item has had the callback applied to it.
+// Implement the map function.
+// It takes in an array and a callback function. It should return a new array where each item has had the callback applied to it.
+// Do not use the built-in .map() method. You may use a for loop.
 const map = (arr, callback) => {
   // Write your code here!
 };
