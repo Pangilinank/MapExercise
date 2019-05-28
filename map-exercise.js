@@ -1,16 +1,36 @@
 // EXERCISE
-// Implement the map function.
+// Implement the map function. Do not use the built-in .map() method. You may use a for loop.
+// The map function should return a new array where each item has had the callback applied to it.
+const map = (arr, callback) => {
+  // Write your code here!
+};
 
 // TESTS
 // All of these should print "true" to verify that the map function is working correctly. Feel free to add your own.
+console.log(areArraysEqual(
+  map([1, 2, 3], x => x + 1),
+  [2, 3, 4]
+));
+console.log(areArraysEqual(
+  map([1, 2, 3], x => x * 2),
+  [2, 4, 6]
+));
+console.log(areArraysEqual(
+  map(['Arbiter', 'Boss', 'Concierge'], x => x.length),
+  [7, 4, 9]
+));
+console.log(areArraysEqual(
+  map(['Dead Cells', 1, 0, undefined, null], x => Boolean(x)),
+  [true, true, false, false, false]
+));
+console.log(areArraysEqual(
+  map([], x => x),
+  []
+));
 
-function areArraysEqual(_a, _b) {
-  if (Object.prototype.toString.call(_a) != Object.prototype.toString.call([]))
+function areArraysEqual(xs, ys) {
+  if (!(Array.isArray(xs) && Array.isArray(ys)) || xs.length !== ys.length) {
     return false;
-  if (_a.length !== _b.length)
-    return false;
-  for (var i = 0; i < _a.length; i++)
-    if (_a[i] !== _b[i])
-      return false;
-  return true;
+  }
+  return xs.every((x, i) => JSON.stringify(x) === JSON.stringify(ys[i]));
 }
